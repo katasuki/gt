@@ -1,0 +1,227 @@
+:root {
+    --cyber-black: #07090e;
+    --cyber-surface: #10141d;
+    --cyber-raised: #171d28;
+    --cyber-line: #30394a;
+    --cyber-text: #f2f4f8;
+    --cyber-muted: #9aa7ba;
+    --cyber-yellow: #ffd52a;
+    --cyber-blue: #26a5ff;
+    --cyber-red: #ff4057;
+}
+
+:root {
+    --cp-bg-dark: var(--cyber-black);
+    --cp-card-bg: var(--cyber-surface);
+    --cp-cyan: var(--cyber-blue);
+    --cp-pink: var(--cyber-red);
+    --cp-purple-glow: var(--cyber-yellow);
+    --cp-yellow: var(--cyber-yellow);
+    --cp-text-dim: var(--cyber-muted);
+    --profile-bg: var(--cyber-black);
+    --profile-panel: var(--cyber-surface);
+    --profile-line: var(--cyber-line);
+    --profile-muted: var(--cyber-muted);
+    --profile-cyan: var(--cyber-blue);
+    --profile-pink: var(--cyber-red);
+}
+
+.tasks-page {
+    --tasks-cyan: var(--cyber-blue);
+    --tasks-pink: var(--cyber-red);
+    --tasks-line: var(--cyber-line);
+    --tasks-surface: var(--cyber-surface);
+}
+
+.coaching-page {
+    --coach-bg: var(--cyber-black);
+    --coach-panel: var(--cyber-surface);
+    --coach-cyan: var(--cyber-blue);
+    --coach-pink: var(--cyber-red);
+    --coach-gold: var(--cyber-yellow);
+}
+
+body.cp-landing-body,
+body.cp-body,
+body.player-profile-page,
+body.coaching-page,
+body.admin-page {
+    background-color: var(--cyber-black);
+    color: var(--cyber-text);
+}
+
+body.cp-landing-body::before,
+body.cp-body::before,
+body.player-profile-page::before,
+body.coaching-page::before,
+body.admin-page::before {
+    position: fixed;
+    inset: -20%;
+    z-index: 9997;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.72'/%3E%3C/svg%3E");
+    opacity: 0.045;
+    pointer-events: none;
+    content: "";
+    animation: cyber-noise-jitter 7s steps(1, end) infinite;
+}
+
+body.cp-landing-body::after,
+body.cp-body::after,
+body.player-profile-page::after,
+body.coaching-page::after,
+body.admin-page::after {
+    position: fixed;
+    inset: 0;
+    z-index: 9996;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 3px,
+        rgba(255, 255, 255, 0.025) 4px
+    );
+    pointer-events: none;
+    content: "";
+}
+
+@keyframes cyber-noise-jitter {
+    0%, 91%, 93%, 95%, 97%, 100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-1.2%, 0.7%);
+    }
+
+    94% {
+        transform: translate(0.8%, -0.6%);
+    }
+
+    96% {
+        transform: translate(-0.5%, -0.8%);
+    }
+}
+
+body.cp-landing-body {
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(255, 213, 42, 0.09), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(38, 165, 255, 0.11), transparent 50%),
+        linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.82));
+}
+
+body.cp-body {
+    background-image:
+        radial-gradient(circle at 80% 15%, rgba(255, 213, 42, 0.1), transparent 38%),
+        radial-gradient(circle at 15% 85%, rgba(38, 165, 255, 0.1), transparent 42%);
+}
+
+body.player-profile-page {
+    background-image:
+        radial-gradient(ellipse at 84% 8%, rgba(255, 213, 42, 0.08), transparent 34%),
+        radial-gradient(ellipse at 60% 70%, rgba(38, 165, 255, 0.06), transparent 48%),
+        var(--cyber-black);
+}
+
+body.coaching-page .coaching-hero {
+    background:
+        radial-gradient(ellipse at 78% 43%, rgba(38, 165, 255, 0.12), transparent 33%),
+        radial-gradient(ellipse at 91% 24%, rgba(255, 64, 87, 0.11), transparent 28%),
+        linear-gradient(115deg, var(--cyber-black) 30%, var(--cyber-surface) 100%);
+}
+
+.coaching-page .coaching-nav,
+.coaching-page .coaching-final {
+    background-color: var(--cyber-black);
+}
+
+.cp-brand-logo {
+    text-shadow: 0 0 10px var(--cyber-yellow);
+    animation: cyber-text-glitch 8s steps(1, end) infinite;
+}
+
+.cp-hero-title,
+.tasks-header h1,
+.coaching-hero h1,
+.admin-header h1,
+.profile-welcome-banner h2 {
+    animation: cyber-text-glitch 9s steps(1, end) infinite;
+}
+
+@keyframes cyber-text-glitch {
+    0%, 92%, 94%, 96%, 98%, 100% {
+        transform: translate(0);
+    }
+
+    93% {
+        transform: translate(1px, 0);
+        text-shadow: -2px 0 rgba(38, 165, 255, 0.75), 2px 0 rgba(255, 64, 87, 0.65);
+    }
+
+    95% {
+        transform: translate(-1px, 0);
+        text-shadow: 2px 0 rgba(255, 213, 42, 0.7), -2px 0 rgba(38, 165, 255, 0.6);
+    }
+
+    97% {
+        transform: translate(0.5px, 0);
+        text-shadow: -1px 0 rgba(255, 64, 87, 0.6), 1px 0 rgba(38, 165, 255, 0.6);
+    }
+}
+
+.user-avatar {
+    background: linear-gradient(135deg, var(--cyber-blue), var(--cyber-red));
+}
+
+.text-cyan,
+.text-cyan-hover:hover,
+.border-cyan {
+    color: var(--cyber-blue) !important;
+}
+
+.text-pink,
+.border-pink {
+    color: var(--cyber-red) !important;
+}
+
+.text-yellow {
+    color: var(--cyber-yellow) !important;
+}
+
+.border-cyan {
+    border-color: var(--cyber-blue) !important;
+}
+
+.border-pink {
+    border-color: var(--cyber-red) !important;
+}
+
+.cp-btn-cyan,
+.coaching-primary-cta {
+    background-color: var(--cyber-yellow);
+    color: #111;
+}
+
+.cp-btn-cyan:hover,
+.coaching-primary-cta:hover {
+    background-color: #fff;
+    color: #111;
+}
+
+.scanlines {
+    opacity: 0.12;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.cp-landing-body::before,
+    body.cp-body::before,
+    body.player-profile-page::before,
+    body.coaching-page::before,
+    body.admin-page::before,
+    .cp-brand-logo,
+    .cp-hero-title,
+    .tasks-header h1,
+    .coaching-hero h1,
+    .admin-header h1,
+    .profile-welcome-banner h2 {
+        animation: none;
+    }
+}

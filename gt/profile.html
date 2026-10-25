@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVASK | Hồ sơ người chơi</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="cyberpunk-theme.css">
+</head>
+
+<body class="player-profile-page">
+    <aside class="profile-sidebar">
+        <a href="indext.html" class="profile-sidebar-brand">KAVASK</a>
+        <a class="sidebar-search" href="tasks.html">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span>Tìm người chơi</span>
+            <kbd>Ctrl K</kbd>
+        </a>
+        <nav class="sidebar-sections" aria-label="Điều hướng hồ sơ">
+            <section class="sidebar-group">
+                <h2>Trang chủ</h2>
+                <a href="indext.html#about">Giới thiệu KAVASK</a>
+                <a href="coaching.html">Huấn luyện</a>
+            </section>
+            <section class="sidebar-group">
+                <h2>Tài nguyên</h2>
+                <a href="tasks.html" aria-current="page">Bài tập phổ biến</a>
+                <a href="tasks.html#my-tasks">Link bài tập của tôi</a>
+                <a href="coaching.html">Huấn luyện KAVASK</a>
+            </section>
+        </nav>
+        <div class="sidebar-account">
+            <a href="admin.html" id="admin-dashboard-link" class="sidebar-account-link d-none">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Quản trị hệ thống</span>
+            </a>
+            <a href="profile.html" class="sidebar-account-link active">
+                <span id="sidebar-avatar" class="user-avatar user-avatar-small" aria-hidden="true"></span>
+                <span>Hồ sơ của tôi</span>
+            </a>
+            <button id="btn-profile-logout" class="sidebar-account-link" type="button">
+                <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                <span>Đăng xuất</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="profile-main">
+        <div class="profile-dashboard">
+            <aside class="profile-identity-card">
+                <div class="profile-identity-cover">
+                    <span class="profile-identity-kicker">KAVASK / PLAYER</span>
+                    <span id="profile-avatar" class="user-avatar user-avatar-large" aria-hidden="true"></span>
+                    <div class="profile-name-wrap">
+                        <h1 id="profile-name">Đang tải hồ sơ...</h1>
+                        <span id="profile-role-badge" class="profile-role-badge d-none" aria-live="polite">ADMIN</span>
+                    </div>
+                    <p id="profile-email" class="profile-identity-email">Đang tải email...</p>
+                </div>
+                <nav class="profile-card-nav" aria-label="Điều hướng hồ sơ">
+                    <a class="active" href="#profile-overview"><i class="fa-regular fa-user" aria-hidden="true"></i> Hồ sơ</a>
+                    <a href="tasks.html"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Bài tập</a>
+                    <a href="#profile-account"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Hoạt động</a>
+                    <a href="https://discord.com" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
+                    </a>
+                </nav>
+            </aside>
+
+            <div class="profile-dashboard-content" id="profile-overview">
+                <header class="profile-welcome-banner">
+                    <span class="profile-section-kicker">PLAYER DOSSIER / 01</span>
+                    <h2>HỒ SƠ XẠ THỦ</h2>
+                    <p>Theo dõi hoạt động luyện tập và thứ hạng KAVASK của bạn.</p>
+                </header>
+
+                <section class="profile-stats-grid" id="profile-stats" aria-label="Thống kê người chơi">
+                    <article class="profile-stat-card stat-exercises">
+                        <span class="profile-stat-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+                        <span class="profile-card-label">BÀI TẬP ĐÃ LƯU</span>
+                        <strong id="profile-task-count" class="profile-stat-value" aria-live="polite">—</strong>
+                        <small>Trong thư viện cá nhân</small>
+                    </article>
+                    <article class="profile-stat-card stat-time">
+                        <span class="profile-stat-icon"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                        <span class="profile-card-label">THỜI GIAN HOẠT ĐỘNG</span>
+                        <strong id="profile-active-time" class="profile-stat-value" aria-live="polite">0 phút</strong>
+                        <small>Thời gian sử dụng trên thiết bị này</small>
+                    </article>
+                    <article class="profile-stat-card stat-rank">
+                        <span class="profile-stat-icon"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                        <span class="profile-card-label">XẾP HẠNG NGƯỜI DÙNG</span>
+                        <strong id="profile-rank" class="profile-stat-value" aria-live="polite">Đang tải...</strong>
+                        <small id="profile-rank-note">Theo xếp hạng được gán cho tài khoản</small>
+                    </article>
+                </section>
+
+                <section class="profile-account-card profile-bio-card" id="profile-account">
+                    <div class="profile-section-heading">
+                        <div>
+                            <span class="profile-section-kicker">ACCOUNT / DATA</span>
+                            <h2>Thông tin tài khoản</h2>
+                        </div>
+                        <span class="profile-bio-mark"><i class="fa-solid fa-id-card" aria-hidden="true"></i></span>
+                    </div>
+                    <dl class="profile-bio-grid">
+                        <div><dt>Người chơi</dt><dd id="profile-bio-name">Đang tải...</dd></div>
+                        <div><dt>Email</dt><dd id="profile-bio-email">Đang tải...</dd></div>
+                        <div><dt>Vai trò</dt><dd id="profile-bio-role">Đang tải...</dd></div>
+                        <div><dt>Rank KAVASK</dt><dd id="profile-bio-rank">Đang tải...</dd></div>
+                    </dl>
+                </section>
+
+                <section class="aimlabs-notice profile-integration-notice" aria-live="polite">
+                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                    <div>
+                        <h2>Kết quả luyện tập chưa được đồng bộ</h2>
+                        <p>Số bài tập hiện tại là số link đã lưu. Kết quả hoàn thành và thời gian luyện tập trong Aimlabs sẽ xuất hiện khi tích hợp được kết nối.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="profile.js"></script>
+    <script type="module" src="activity.js"></script>
+</body>
+
+</html>

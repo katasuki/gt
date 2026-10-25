@@ -1,0 +1,154 @@
+/* --- TOÀN BỘ GIAO DIỆN CYBERPUNK NỀN TỐI CHUẨN XÁC --- */
+
+:root {
+    --cp-bg-dark: #050508;
+    --cp-card-bg: #0b0e14;
+    --cp-cyan: #26a5ff;
+    --cp-pink: #ff4057;
+    --cp-yellow: #ffd52a;
+    --cp-text-dim: #8b9bb4;
+}
+
+/* 1. Ép toàn bộ trang và thẻ body thành màu tối tuyệt đối */
+html, body, body.cp-body {
+    background-color: var(--cp-bg-dark) !important;
+    background-image:
+        radial-gradient(circle at 80% 15%, rgba(255, 213, 42, 0.1), transparent 38%),
+        radial-gradient(circle at 15% 85%, rgba(38, 165, 255, 0.1), transparent 42%);
+    color: #ffffff !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* 2. Hiệu ứng quét màn hình (Scanlines) mờ nhẹ, không gây chói */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.35) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 9999;
+    opacity: 0.25;
+}
+
+/* 3. Khung Card đăng nhập/đăng ký (Màu tối, viền Cyan, không bị sáng trắng) */
+.cp-card {
+    background-color: var(--cp-card-bg) !important;
+    border: 1px solid var(--cp-cyan) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(38, 165, 255, 0.12) !important;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+    position: relative;
+    z-index: 10;
+}
+
+/* 4. Ô nhập liệu (Input) nền đen tuyền, chữ sáng rõ */
+.cp-input {
+    background-color: #020305 !important;
+    border: 1px solid #1a2233 !important;
+    color: var(--cp-cyan) !important;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
+    font-size: 0.95rem;
+}
+
+.cp-input:focus {
+    background-color: #020305 !important;
+    border-color: var(--cp-cyan) !important;
+    color: var(--cp-cyan) !important;
+    box-shadow: 0 0 10px rgba(38, 165, 255, 0.3) !important;
+    outline: none;
+}
+
+.cp-input::placeholder {
+    color: #3e4c66 !important;
+}
+
+/* 5. Định dạng nhãn chữ (Label) trong form */
+label.cp-mono {
+    color: #a0aec0 !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* 6. Nút bấm Cyberpunk */
+.cp-btn-cyan {
+    background-color: var(--cp-cyan) !important;
+    color: #000000 !important;
+    border: none !important;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.cp-btn-cyan:hover {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(38, 165, 255, 0.6) !important;
+}
+
+/* 7. Tiện ích màu chữ phụ */
+.text-dim {
+    color: var(--cp-text-dim) !important;
+}
+
+.text-cyan {
+    color: var(--cp-cyan) !important;
+}
+
+.text-pink {
+    color: var(--cp-pink) !important;
+}
+
+.border-cyan {
+    border-color: var(--cp-cyan) !important;
+}
+
+.border-pink {
+    border-color: var(--cp-pink) !important;
+}
+
+.cp-mono {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.fs-7 {
+    font-size: 0.85rem;
+}
+
+.cp-card {
+    width: 100%;
+}
+
+.cp-btn-outline-pink {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.cp-btn-outline-pink:hover {
+    background-color: var(--cp-pink) !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(255, 64, 87, 0.45);
+}
+
+.cp-card a:focus-visible,
+.cp-card button:focus-visible,
+.cp-card input:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+    .cp-card {
+        padding: 1.25rem !important;
+    }
+}

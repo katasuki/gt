@@ -1,0 +1,709 @@
+.coaching-page {
+    --coach-bg: #080a10;
+    --coach-panel: #11151e;
+    --coach-cyan: #26a5ff;
+    --coach-pink: #ff4057;
+    --coach-gold: #ffd52a;
+    overflow-x: hidden;
+    background: var(--coach-bg);
+    color: #f5f7fb;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.coaching-page .scanlines {
+    z-index: 10;
+    opacity: 0.14;
+}
+
+.coaching-nav {
+    position: relative;
+    z-index: 20;
+    min-height: 76px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 10, 16, 0.94);
+}
+
+.coaching-nav .nav-link {
+    color: #b8c0cf;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.coaching-nav .nav-link:hover,
+.coaching-nav .nav-link.active {
+    color: var(--coach-cyan);
+}
+
+.coaching-account-link {
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(38, 165, 255, 0.55);
+    border-radius: 4px;
+    color: var(--coach-cyan);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.coaching-account-link:hover {
+    background: rgba(38, 165, 255, 0.1);
+    color: #fff;
+}
+
+.coaching-hero {
+    position: relative;
+    min-height: 640px;
+    padding: 100px 0 84px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        radial-gradient(ellipse at 78% 43%, rgba(38, 165, 255, 0.12), transparent 33%),
+        radial-gradient(ellipse at 91% 24%, rgba(255, 64, 87, 0.11), transparent 28%),
+        linear-gradient(115deg, #080a10 30%, #0d111b 100%);
+}
+
+.coaching-hero .container {
+    position: relative;
+    display: flex;
+    min-height: 440px;
+    align-items: center;
+}
+
+.coaching-hero-copy {
+    position: relative;
+    z-index: 2;
+    width: min(690px, 63%);
+}
+
+.coaching-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 20px;
+    color: var(--coach-cyan);
+    font: 600 0.82rem 'Be Vietnam Pro', sans-serif;
+    letter-spacing: 0.12em;
+}
+
+.coaching-kicker > span {
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 0 9px currentColor;
+}
+
+.coaching-hero h1,
+.coaching-section-heading h2,
+.skills-heading h2,
+.routine-copy h2,
+.coaching-final h2 {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 900;
+    line-height: 1.16;
+}
+
+.coaching-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: -0.04em;
+}
+
+.coaching-hero h1 span,
+.coaching-section-heading h2 em,
+.routine-copy h2 em,
+.coaching-final h2 em {
+    color: var(--coach-cyan);
+    font-style: normal;
+}
+
+.coaching-intro {
+    max-width: 555px;
+    margin: 24px 0 0;
+    color: #aab3c4;
+    font-size: 1.25rem;
+    line-height: 1.55;
+}
+
+.coaching-primary-cta,
+.coaching-secondary-cta {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 19px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.coaching-primary-cta {
+    background: var(--coach-cyan);
+    color: #061016;
+}
+
+.coaching-primary-cta:hover {
+    background: #fff;
+    color: #061016;
+    box-shadow: 0 0 22px rgba(255, 213, 42, 0.3);
+}
+
+.coaching-secondary-cta {
+    border: 1px solid #464e5b;
+    color: #e8edf5;
+}
+
+.coaching-secondary-cta:hover {
+    border-color: var(--coach-pink);
+    color: var(--coach-pink);
+}
+
+.coaching-focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 44px;
+    color: #8e9aab;
+    font: 600 0.77rem 'Be Vietnam Pro', sans-serif;
+    text-transform: uppercase;
+}
+
+.coaching-focus-list span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.coaching-focus-list i {
+    color: var(--coach-pink);
+}
+
+.coaching-hero-art {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: min(43vw, 490px);
+    aspect-ratio: 1;
+    transform: translateY(-50%);
+}
+
+.aim-grid {
+    position: absolute;
+    inset: 5%;
+    opacity: 0.27;
+    background-image: linear-gradient(rgba(38, 165, 255, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(38, 165, 255, 0.12) 1px, transparent 1px);
+    background-size: 30px 30px;
+    mask-image: radial-gradient(circle, #000 10%, transparent 70%);
+}
+
+.aim-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(38, 165, 255, 0.45);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.aim-ring-outer {
+    width: 79%;
+    height: 79%;
+    border-style: dashed;
+    animation: aim-rotate 45s linear infinite;
+}
+
+.aim-ring-inner {
+    width: 52%;
+    height: 52%;
+    border-color: rgba(255, 64, 87, 0.7);
+    box-shadow: 0 0 35px rgba(255, 64, 87, 0.12), inset 0 0 35px rgba(38, 165, 255, 0.08);
+}
+
+.aim-crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%);
+}
+
+.aim-crosshair::before,
+.aim-crosshair::after,
+.aim-crosshair span {
+    position: absolute;
+    display: block;
+    content: "";
+    background: var(--coach-cyan);
+    box-shadow: 0 0 12px var(--coach-cyan);
+}
+
+.aim-crosshair::before {
+    top: 59px;
+    left: 0;
+    width: 120px;
+    height: 2px;
+}
+
+.aim-crosshair::after {
+    top: 0;
+    left: 59px;
+    width: 2px;
+    height: 120px;
+}
+
+.aim-crosshair span:first-child {
+    top: 54px;
+    left: 54px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--coach-pink);
+    border-radius: 50%;
+    background: var(--coach-bg);
+}
+
+.aim-crosshair span:last-child {
+    top: 38px;
+    left: 38px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 64, 87, 0.55);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+}
+
+.aim-coordinate {
+    position: absolute;
+    right: 15%;
+    bottom: 19%;
+    color: var(--coach-pink);
+    font: 600 0.72rem 'Be Vietnam Pro', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.aim-readout {
+    position: absolute;
+    top: 21%;
+    left: 12%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: end;
+    gap: 4px 10px;
+    color: #98a5b8;
+    font: 600 0.65rem 'Be Vietnam Pro', sans-serif;
+}
+
+.aim-readout strong {
+    grid-row: span 2;
+    color: #fff;
+    font: 1.7rem 'Be Vietnam Pro', sans-serif;
+}
+
+.aim-readout i {
+    width: 20px;
+    height: 3px;
+    background: var(--coach-cyan);
+}
+
+.aim-readout i:nth-last-child(2) {
+    opacity: 0.5;
+}
+
+.aim-readout i:last-child {
+    opacity: 0.22;
+}
+
+.section-pad {
+    padding: 100px 0;
+}
+
+.coaching-method {
+    background: #0c0f16;
+}
+
+.coaching-section-heading {
+    max-width: 740px;
+    margin-bottom: 48px;
+}
+
+.coaching-section-heading h2,
+.skills-heading h2,
+.routine-copy h2,
+.coaching-final h2 {
+    font-size: clamp(1.8rem, 3.4vw, 3rem);
+}
+
+.coaching-section-heading > p:last-child,
+.skills-heading > p,
+.routine-copy > p:not(.coaching-kicker),
+.coaching-final .container > p:not(.coaching-kicker) {
+    color: #98a3b5;
+    font-size: 1.12rem;
+}
+
+.method-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.method-step {
+    position: relative;
+    min-height: 250px;
+    padding: 28px;
+    border: 1px solid #272d39;
+    background: linear-gradient(145deg, #121722, #0b0e14);
+}
+
+.step-index,
+.skill-number {
+    color: #687487;
+    font: 600 0.77rem 'Be Vietnam Pro', sans-serif;
+}
+
+.step-icon {
+    margin: 27px 0 16px;
+    color: var(--coach-cyan);
+    font-size: 1.4rem;
+}
+
+.method-step:nth-child(2) .step-icon {
+    color: var(--coach-pink);
+}
+
+.method-step:nth-child(3) .step-icon {
+    color: var(--coach-gold);
+}
+
+.method-step h3 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.method-step p {
+    min-height: 54px;
+    color: #9ca6b7;
+}
+
+.step-tag {
+    color: #798699;
+    font: 600 0.68rem 'Be Vietnam Pro', sans-serif;
+}
+
+.coaching-skills {
+    background:
+        radial-gradient(ellipse at 10% 70%, rgba(255, 64, 87, 0.07), transparent 35%),
+        #080a10;
+}
+
+.skills-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 36px;
+    margin-bottom: 44px;
+}
+
+.skills-heading > p {
+    max-width: 390px;
+}
+
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.skill-card {
+    position: relative;
+    min-height: 315px;
+    padding: 25px;
+    overflow: hidden;
+    border: 1px solid #29303b;
+    background: linear-gradient(150deg, #141923, #0b0d13);
+}
+
+.skill-card::after {
+    position: absolute;
+    top: -40px;
+    right: -45px;
+    width: 145px;
+    height: 145px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.1;
+    content: "";
+}
+
+.skill-card-cyan {
+    color: var(--coach-cyan);
+}
+
+.skill-card-pink {
+    color: var(--coach-pink);
+}
+
+.skill-card-gold {
+    color: var(--coach-gold);
+}
+
+.skill-card > i {
+    display: block;
+    margin: 33px 0 16px;
+    font-size: 1.5rem;
+}
+
+.skill-card h3 {
+    color: #fff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.skill-card p {
+    min-height: 52px;
+    color: #9ca6b7;
+}
+
+.skill-meter {
+    height: 3px;
+    margin: 22px 0 11px;
+    background: #2b303a;
+}
+
+.skill-meter span {
+    display: block;
+    height: 100%;
+    background: currentColor;
+    box-shadow: 0 0 9px currentColor;
+}
+
+.skill-caption {
+    color: #798699;
+    font: 600 0.68rem 'Be Vietnam Pro', sans-serif;
+}
+
+.coaching-routine {
+    border-top: 1px solid #1c222b;
+    background: #0c0f16;
+}
+
+.routine-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.routine-copy > p:not(.coaching-kicker) {
+    margin: 22px 0;
+}
+
+.routine-link {
+    display: inline-flex;
+    gap: 10px;
+    color: var(--coach-cyan);
+    font: 600 0.78rem 'Be Vietnam Pro', sans-serif;
+    text-decoration: none;
+}
+
+.routine-link:hover {
+    color: #fff;
+}
+
+.routine-board {
+    border: 1px solid #303744;
+    background: #10151e;
+    box-shadow: 15px 15px 0 rgba(38, 165, 255, 0.035);
+}
+
+.routine-board-head,
+.routine-board-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    color: #7f8b9d;
+    font: 600 0.72rem 'Be Vietnam Pro', sans-serif;
+}
+
+.routine-board-head {
+    border-bottom: 1px solid #2b313c;
+    color: var(--coach-cyan);
+}
+
+.routine-row {
+    display: grid;
+    grid-template-columns: 45px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border-bottom: 1px solid #242a34;
+}
+
+.routine-time {
+    color: var(--coach-pink);
+    font: 600 0.82rem 'Be Vietnam Pro', sans-serif;
+}
+
+.routine-row strong,
+.routine-row small {
+    display: block;
+}
+
+.routine-row strong {
+    font-size: 1.1rem;
+}
+
+.routine-row small {
+    color: #858fa0;
+}
+
+.routine-duration {
+    color: #a7b3c4;
+    font: 600 0.7rem 'Be Vietnam Pro', sans-serif;
+}
+
+.routine-board-foot {
+    justify-content: flex-start;
+    gap: 10px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+}
+
+.routine-board-foot i {
+    color: var(--coach-gold);
+}
+
+.coaching-final {
+    padding: 88px 0;
+    border-top: 1px solid rgba(38, 165, 255, 0.2);
+    background: radial-gradient(ellipse at 50% 130%, rgba(255, 213, 42, 0.1), transparent 60%), #090c12;
+    text-align: center;
+}
+
+.coaching-final .coaching-kicker {
+    justify-content: center;
+}
+
+.coaching-final .container > p:not(.coaching-kicker) {
+    margin: 17px auto 25px;
+}
+
+.coaching-footer {
+    padding: 24px 0;
+    border-top: 1px solid #202630;
+    background: #07090d;
+}
+
+.coaching-footer p {
+    margin: 0;
+    color: #7d8797;
+    font: 600 0.72rem 'Be Vietnam Pro', sans-serif;
+}
+
+.coaching-footer a:last-child {
+    color: #aab4c3;
+    text-decoration: none;
+}
+
+.coaching-footer a:last-child:hover {
+    color: var(--coach-cyan);
+}
+
+@keyframes aim-rotate {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .coaching-hero {
+        padding: 76px 0;
+    }
+
+    .coaching-hero-copy {
+        width: 75%;
+    }
+
+    .coaching-hero-art {
+        right: -90px;
+        width: 420px;
+        opacity: 0.55;
+    }
+
+    .routine-layout {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .coaching-hero {
+        min-height: auto;
+        padding: 75px 0 60px;
+    }
+
+    .coaching-hero .container {
+        min-height: 0;
+    }
+
+    .coaching-hero-copy {
+        width: 100%;
+    }
+
+    .coaching-hero-art {
+        top: 0;
+        right: -180px;
+        width: 340px;
+        transform: none;
+        opacity: 0.22;
+    }
+
+    .method-track,
+    .skill-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .method-step {
+        min-height: 0;
+    }
+
+    .method-step p,
+    .skill-card p {
+        min-height: 0;
+    }
+
+    .skills-heading {
+        display: block;
+    }
+
+    .skills-heading > p {
+        margin-top: 20px;
+    }
+
+    .section-pad {
+        padding: 70px 0;
+    }
+
+    .routine-row {
+        grid-template-columns: 30px 1fr;
+    }
+
+    .routine-duration {
+        grid-column: 2;
+    }
+
+    .coaching-footer .container {
+        justify-content: center !important;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aim-ring-outer {
+        animation: none;
+    }
+}

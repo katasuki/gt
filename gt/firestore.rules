@@ -1,0 +1,72 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function activeUser() {
+      return signedIn() &&
+        (!exists(/databases/$(database)/documents/userAccess/$(request.auth.uid)) ||
+          get(/databases/$(database)/documents/userAccess/$(request.auth.uid)).data.banned != true);
+    }
+
+    function isAdmin() {
+      return activeUser() &&
+        exists(/databases/$(database)/documents/userRoles/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/userRoles/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function validTask(data) {
+      return data.keys().hasAll([
+          'name', 'url', 'platform', 'category', 'ownerUid'
+        ]) &&
+        data.keys().hasOnly([
+          'name', 'url', 'platform', 'category', 'difficulty', 'description',
+          'ownerUid', 'createdAt'
+        ]) &&
+        data.name is string && data.name.size() > 0 && data.name.size() <= 70 &&
+        data.url is string && data.url.size() <= 2048 &&
+        (data.url.matches('^https://.*') || data.url.matches('^http://.*')) &&
+        data.platform == 'custom' &&
+        data.category in ['clicking', 'tracking', 'switching'] &&
+        data.ownerUid == request.auth.uid;
+    }
+
+    match /trainingTasks/{taskId} {
+      allow read: if activeUser();
+      allow write: if false;
+    }
+
+    match /userTasks/{taskId} {
+      allow read: if activeUser() &&
+        (resource.data.ownerUid == request.auth.uid || isAdmin());
+      allow create: if activeUser() && validTask(request.resource.data);
+      allow update: if activeUser() &&
+        resource.data.ownerUid == request.auth.uid &&
+        validTask(request.resource.data);
+      allow delete: if activeUser() &&
+        (resource.data.ownerUid == request.auth.uid || isAdmin());
+    }
+
+    match /userAccess/{uid} {
+      allow read: if activeUser() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /userRoles/{uid} {
+      allow read: if activeUser() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /userRanks/{uid} {
+      allow read: if activeUser() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

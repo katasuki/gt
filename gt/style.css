@@ -1,0 +1,280 @@
+/* style.css - Cyberpunk Voltaic Layout */
+
+:root {
+    --cp-bg-dark: #07080d;
+    --cp-cyan: #26a5ff;
+    --cp-pink: #ff4057;
+    --cp-purple-glow: #ffd52a;
+    --cp-text-dim: #a0aec0;
+}
+
+body.cp-landing-body {
+    background-color: var(--cp-bg-dark);
+    /* Nền Gradient mờ kết hợp họa tiết không gian Cyberpunk */
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(255, 213, 42, 0.09) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(38, 165, 255, 0.11) 0%, transparent 50%),
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    min-vh: 100vh;
+    overflow-x: hidden;
+}
+
+/* Hiệu ứng quét màn hình Scanline */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 100% 4px;
+    z-index: 9999;
+    opacity: 0.6;
+}
+
+/* Navbar Style */
+.cp-navbar {
+    background: rgba(7, 8, 13, 0.75);
+    backdrop-filter: blur(12px);
+}
+
+.cp-brand-logo {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px var(--cp-cyan);
+}
+
+.cp-nav-links .nav-link {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+.cp-nav-links .nav-link:hover {
+    color: var(--cp-cyan);
+    text-shadow: 0 0 8px var(--cp-cyan);
+}
+
+.cp-nav-links .nav-link.admin-nav-link {
+    color: #9aa0a6;
+}
+
+.account-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 42px;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font: 600 1rem 'Be Vietnam Pro', sans-serif;
+}
+
+.account-toggle:hover,
+.account-toggle.show {
+    border-color: var(--cp-cyan);
+    background: rgba(38, 165, 255, 0.08);
+}
+
+.account-toggle::after {
+    margin-left: 0.2rem;
+}
+
+.user-avatar {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #14b8a6, #6336c9);
+    color: #fff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-avatar-small {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+}
+
+.user-avatar-large {
+    width: 104px;
+    height: 104px;
+    font-size: 2rem;
+}
+
+.account-dropdown {
+    min-width: 210px;
+    padding: 0.35rem;
+    border: 1px solid #333640;
+    border-radius: 9px;
+    background: #202126;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.account-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 5px;
+    color: #e8e8eb;
+    font: 600 1rem 'Be Vietnam Pro', sans-serif;
+}
+
+.account-menu-item i {
+    width: 1rem;
+    color: #9aa0ad;
+}
+
+.account-menu-item:hover,
+.account-menu-item:focus {
+    background: #303138;
+    color: #fff;
+}
+
+.account-dropdown .dropdown-divider {
+    border-color: #3a3c44;
+}
+
+.profile-avatar-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.profile-meta {
+    color: var(--cp-text-dim);
+    font-size: 0.85rem;
+}
+
+.profile-form-label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #d4d8e0;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 991.98px) {
+    .account-menu-item {
+        padding-left: 0;
+    }
+
+    .account-dropdown {
+        background: rgba(7, 8, 13, 0.96);
+    }
+}
+
+/* Hero Content */
+.cp-hero-section {
+    min-height: 100vh;
+    padding-top: 100px;
+    position: relative;
+}
+
+.cp-hero-title {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(38, 165, 255, 0.3);
+}
+
+.cp-hero-description {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cp-text-dim);
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+/* Nút bấm Vắt góc Cyberpunk (Polygon Button) */
+.cp-btn-polygon {
+    display: inline-block;
+    padding: 14px 32px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    transition: all 0.25s ease;
+}
+
+.cp-btn-cyan {
+    background-color: var(--cp-cyan);
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 213, 42, 0.35);
+}
+
+.cp-btn-cyan:hover {
+    background-color: #ffffff;
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.cp-btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.cp-btn-outline:hover {
+    border-color: var(--cp-pink);
+    color: var(--cp-pink);
+    box-shadow: 0 0 15px rgba(255, 64, 87, 0.5);
+}
+
+/* Mũi tên chỉ xuống */
+.cp-scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}

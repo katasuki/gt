@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVASK // CỔNG XÁC THỰC</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Giao diện -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="cyberpunk-theme.css">
+</head>
+
+<body class="cp-body d-flex align-items-center justify-content-center min-vh-100">
+
+    <!-- Hiệu ứng quét màn hình Scanlines mờ dịu mắt -->
+    <div class="scanlines"></div>
+
+    <div class="container" style="max-width: 460px; z-index: 10;">
+        <div class="cp-card p-4">
+
+            <!-- Logo & Tiêu đề -->
+            <div class="text-center mb-4">
+                <a href="indext.html" class="text-decoration-none">
+                    <span class="cp-brand-logo fs-2"
+                        style="font-family: 'Be Vietnam Pro', sans-serif; font-weight: 900; color: #fff; text-shadow: 0 0 10px var(--cp-cyan);">KAVASK</span>
+                </a>
+                <div class="cp-mono text-cyan mt-1 fs-7">// CỔNG XÁC THỰC BẢO MẬT</div>
+            </div>
+
+            <!-- Tab Chuyển đổi Đăng nhập / Đăng ký -->
+            <div class="d-flex mb-4 cp-mono border-bottom border-secondary">
+                <button type="button" id="tab-login"
+                    class="btn btn-link text-decoration-none text-cyan fw-bold pb-2 border-bottom border-2 border-cyan w-50 text-center">
+                    ĐĂNG NHẬP
+                </button>
+                <button type="button" id="tab-register"
+                    class="btn btn-link text-decoration-none text-dim pb-2 w-50 text-center">
+                    ĐĂNG KÝ
+                </button>
+            </div>
+
+            <!-- Khung báo lỗi / thành công -->
+            <div id="auth-alert" class="alert alert-danger d-none py-2 fs-7 cp-mono mb-3" role="alert"></div>
+
+            <!-- FORM ĐĂNG NHẬP -->
+            <form id="form-login">
+                <div class="mb-3">
+                    <label class="cp-mono text-white fs-7 mb-1">EMAIL XẠ THỦ</label>
+                    <input type="email" id="login-email" class="form-control cp-input" placeholder="operator@kavask.gg"
+                        required autocomplete="username">
+                </div>
+                <div class="mb-4">
+                    <label class="cp-mono text-white fs-7 mb-1">MẬT KHẨU</label>
+                    <input type="password" id="login-password" class="form-control cp-input" placeholder="••••••••"
+                        required autocomplete="current-password">
+                </div>
+                <button type="submit" id="btn-submit-login" class="cp-btn cp-btn-cyan text-black fw-bold py-2 w-100">
+                    <i class="fa-solid fa-right-to-bracket me-2"></i>TRUY CẬP HỆ THỐNG
+                </button>
+            </form>
+
+            <!-- FORM ĐĂNG KÝ (Mặc định ẩn) -->
+            <form id="form-register" class="d-none">
+                <div class="mb-3">
+                    <label class="cp-mono text-white fs-7 mb-1">EMAIL TÀI KHOẢN MỚI</label>
+                    <input type="email" id="reg-email" class="form-control cp-input" placeholder="operator@kavask.gg"
+                        required autocomplete="username">
+                </div>
+                <div class="mb-3">
+                    <label class="cp-mono text-white fs-7 mb-1">MẬT KHẨU (TỐI THIỂU 6 KÝ TỰ)</label>
+                    <input type="password" id="reg-password" class="form-control cp-input" placeholder="••••••••"
+                        required autocomplete="new-password">
+                </div>
+                <div class="mb-4">
+                    <label class="cp-mono text-white fs-7 mb-1">XÁC NHẬN MẬT KHẨU</label>
+                    <input type="password" id="reg-confirm-password" class="form-control cp-input"
+                        placeholder="••••••••" required autocomplete="new-password">
+                </div>
+                <button type="submit" id="btn-submit-register" class="cp-btn cp-btn-outline-pink py-2 w-100"
+                    style="border: 1px solid var(--cp-pink); color: var(--cp-pink); background: transparent;">
+                    <i class="fa-solid fa-user-plus me-2"></i>TẠO TÀI KHOẢN MỚI
+                </button>
+            </form>
+
+            <!-- Quay về trang chủ -->
+            <div class="mt-4 text-center">
+                <a href="indext.html" class="text-dim text-decoration-none fs-7 cp-mono"><i
+                        class="fa-solid fa-arrow-left me-1"></i>QUAY LẠI TRANG CHỦ</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script xử lý chuyển tab & kết nối Firebase -->
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="activity.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

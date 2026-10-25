@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVASK // NỀN TẢNG HUẤN LUYỆN AIM</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Style Cyberpunk chính -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cyberpunk-theme.css">
+</head>
+
+<body class="cp-landing-body">
+
+    <!-- Hiệu ứng quét màn hình Scanlines -->
+    <div class="scanlines"></div>
+
+    <!-- 1. THANH ĐIỀU HƯỚNG (NAVBAR) -->
+    <nav class="navbar navbar-expand-lg cp-navbar fixed-top py-3">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="indext.html">
+                <span class="cp-brand-logo">KAVASK</span>
+            </a>
+            <button class="navbar-toggler border-cyan" type="button" data-bs-toggle="collapse"
+                data-bs-target="#cpNavMenu">
+                <i class="fa-solid fa-bars text-cyan"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="cpNavMenu">
+                <ul class="navbar-nav gap-4 cp-nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coaching.html">Huấn luyện</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#benchmarks">Cấp độ Rank</a></li>
+                    <li class="nav-item" id="auth-link"><a class="nav-link text-pink" href="auth.html">Đăng nhập</a></li>
+                    <li class="nav-item dropdown d-none" id="account-menu">
+                        <button class="account-toggle dropdown-toggle" type="button" id="account-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="user-avatar user-avatar-small" id="nav-avatar" aria-hidden="true"></span>
+                            <span id="nav-username">Tài khoản</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end account-dropdown" aria-labelledby="account-toggle">
+                            <li>
+                                <a class="dropdown-item account-menu-item" href="profile.html">
+                                    <i class="fa-regular fa-user"></i><span>Hồ sơ của tôi</span>
+                                </a>
+                            </li>
+                            <li class="d-none" id="admin-menu-item">
+                                <a class="dropdown-item account-menu-item" href="admin.html">
+                                    <i class="fa-solid fa-shield-halved"></i><span>Quản trị hệ thống</span>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <button class="dropdown-item account-menu-item" id="nav-signout" type="button">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i><span>Đăng xuất</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. PHẦN HERO CHÍNH -->
+    <section class="cp-hero-section d-flex align-items-center">
+        <div class="container px-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="cp-hero-title mb-4">
+                        NÂNG CAO TRÌNH ĐỘ.<br>
+                        AIM ĐỈNH CAO.<br>
+                        KỸ NĂNG FPS.
+                    </h1>
+                    <p class="cp-hero-description mb-5">
+                        KAVASK là nền tảng luyện aim dành cho người chơi FPS, tập trung vào tiến bộ có hệ thống,
+                        độ chính xác và kỹ năng thi đấu.
+                    </p>
+                    <div class="d-flex flex-wrap gap-4 align-items-center">
+                        <a href="https://discord.gg" target="_blank"
+                            class="cp-btn-polygon cp-btn-cyan text-decoration-none">
+                            THAM GIA DISCORD
+                        </a>
+                        <a href="profile.html" class="cp-btn-polygon cp-btn-outline text-decoration-none">
+                            ĐÁNH GIÁ AIM CỦA BẠN
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cp-scroll-down">
+            <a href="#about" class="text-white"><i class="fa-solid fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- 3. PHẦN GIỚI THIỆU / SỨ MỆNH -->
+    <section id="about" class="py-5 cp-section border-top border-secondary">
+        <div class="container px-5 py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="cp-mono text-cyan fs-7">// SỨ MỆNH CỦA CHÚNG TÔI</span>
+                    <h2 class="cp-section-title text-white mt-2 mb-4">KIẾN TẠO TƯƠNG LAI ĐIỀU KHIỂN CHUỘT</h2>
+                    <p class="text-dim lead">
+                        Chúng tôi cung cấp các giáo trình huấn luyện có cấu trúc, bài kiểm tra tiêu chuẩn và vòng lặp
+                        phản hồi dựa trên dữ liệu giúp người chơi FPS cạnh tranh đạt được độ chính xác và tiềm năng aim
+                        tối đa.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="cp-stat-card p-4">
+                                <h3 class="text-cyan fw-bold display-6">150K+</h3>
+                                <p class="cp-mono text-dim m-0">XẠ THỦ HOẠT ĐỘNG</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="cp-stat-card p-4">
+                                <h3 class="text-pink fw-bold display-6">12+</h3>
+                                <p class="cp-mono text-dim m-0">CẤP ĐỘ RANK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PHẦN TÍNH NĂNG CỐT LÕI -->
+    <section id="features" class="py-5 cp-section bg-black">
+        <div class="container px-5 py-5">
+            <div class="text-center mb-5">
+                <span class="cp-mono text-pink fs-7">// HỆ THỐNG CỐT LÕI</span>
+                <h2 class="cp-section-title text-white mt-1">CHÚNG TÔI CUNG CẤP NHỮNG GÌ</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="cp-feature-card p-4">
+                        <div class="text-cyan fs-2 mb-3"><i class="fa-solid fa-bullseye"></i></div>
+                        <h4 class="text-white fw-bold mb-2">BÀI KIỂM TRA CHUẨN</h4>
+                        <p class="text-dim fs-7">Các kịch bản chuẩn hóa đo lường cơ chế nhấp chuột (Clicking), bám tâm
+                            (Tracking) và chuyển đổi mục tiêu (Switching).</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cp-feature-card p-4">
+                        <div class="text-pink fs-2 mb-3"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4 class="text-white fw-bold mb-2">PHÂN TÍCH TIẾN TRÌNH</h4>
+                        <p class="text-dim fs-7">Theo dõi sự tiến bộ theo thời gian thông qua chỉ số năng lượng và hệ
+                            thống đánh giá rank tự động.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cp-feature-card p-4">
+                        <div class="text-yellow fs-2 mb-3"><i class="fa-solid fa-users"></i></div>
+                        <h4 class="text-white fw-bold mb-2">CỘNG ĐỒNG ƯU TÚ</h4>
+                        <p class="text-dim fs-7">Nhận lời khuyên, sự hướng dẫn huấn luyện và tài nguyên từ những game
+                            thủ FPS hàng đầu trên toàn cầu.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="coaching.html" class="cp-btn-polygon cp-btn-cyan text-decoration-none">KHÁM PHÁ CHƯƠNG TRÌNH HUẤN LUYỆN</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PHẦN HỆ THỐNG RANK -->
+    <section id="benchmarks" class="py-5 cp-section border-top border-secondary">
+        <div class="container px-5 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
+                <div>
+                    <span class="cp-mono text-cyan fs-7">// LỘ TRÌNH THĂNG HẠNG</span>
+                    <h2 class="cp-section-title text-white mt-1 mb-0">HỆ THỐNG XẾP HẠNG KAVASK</h2>
+                </div>
+                <a href="auth.html" class="cp-btn-polygon cp-btn-cyan text-decoration-none">MỞ ỨNG DỤNG</a>
+            </div>
+
+            <div class="row g-3 text-center cp-mono">
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border border-secondary bg-dark text-white">TẬP SỰ (NOVICE)</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border border-info bg-dark text-cyan">TRUNG CẤP (INTERMEDIATE)</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border border-danger bg-dark text-pink">NÂNG CAO (ADVANCED)</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border border-warning bg-dark text-yellow">SIÊU VIỆT (CELESTIAL)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CHÂN TRANG (FOOTER) -->
+    <footer class="py-5 border-top border-secondary bg-black">
+        <div class="container px-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <span class="cp-brand-logo fs-4">KAVASK</span>
+                    <p class="cp-mono text-dim fs-7 mt-2 mb-0">© 2026 KAVASK. BẢO LƯU MỌI QUYỀN.</p>
+                </div>
+                <div
+                    class="col-md-6 text-center text-md-end fs-5 d-flex gap-4 justify-content-center justify-content-md-end">
+                    <a href="#" class="text-dim text-cyan-hover"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="text-dim text-cyan-hover"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="text-dim text-cyan-hover"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="account.js"></script>
+    <script type="module" src="activity.js"></script>
+</body>
+
+</html>

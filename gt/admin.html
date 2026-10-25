@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>KAVASK | Quản trị hệ thống</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="cyberpunk-theme.css">
+</head>
+
+<body class="admin-page">
+    <a class="admin-skip-link" href="#overview">Đến nội dung chính</a>
+    <aside class="profile-sidebar" id="admin-sidebar" aria-label="Thanh bên quản trị">
+        <a href="indext.html" class="profile-sidebar-brand"><span class="admin-brand-mark" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span> KAVASK <span class="admin-brand-tag">Admin</span></a>
+        <nav class="sidebar-sections" aria-label="Điều hướng quản trị">
+            <section class="sidebar-group">
+                <h2>Dashboard</h2>
+                <a href="#overview" class="admin-nav-link"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i><span>Tổng quan</span></a>
+                <a href="#users" class="admin-nav-link"><i class="fa-solid fa-users" aria-hidden="true"></i><span>Tài khoản người dùng</span></a>
+                <a href="#rank-history" class="admin-nav-link"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>Biến động rank</span></a>
+                <a href="#exercises" class="admin-nav-link"><i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Bài tập huấn luyện</span></a>
+                <h2 class="admin-nav-subheading">Cá nhân</h2>
+                <a href="profile.html"><i class="fa-regular fa-user" aria-hidden="true"></i><span>Hồ sơ của tôi</span></a>
+            </section>
+        </nav>
+        <div class="sidebar-account">
+            <a href="profile.html" class="sidebar-account-link">
+                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                <span>Hồ sơ của tôi</span>
+            </a>
+            <button id="admin-signout" class="sidebar-account-link" type="button">
+                <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                <span>Đăng xuất</span>
+            </button>
+        </div>
+    </aside>
+
+    <button class="admin-sidebar-backdrop" type="button" aria-label="Đóng menu" hidden></button>
+    <header class="admin-topbar">
+        <button class="admin-menu-toggle" type="button" aria-label="Mở menu điều hướng" aria-controls="admin-sidebar" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        <span class="admin-topbar-label">Không gian quản trị</span>
+        <div class="admin-topbar-account"><span class="admin-avatar" aria-hidden="true">K</span><span>Quản trị viên</span><a href="profile.html" aria-label="Mở hồ sơ"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a></div>
+    </header>
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <p class="admin-eyebrow"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Trang chủ &nbsp; / &nbsp; Dashboard</p>
+                <h1>Bảng điều khiển</h1>
+                <p>Quản lý tài khoản và thư viện bài tập huấn luyện.</p>
+            </div>
+            <a href="indext.html" class="admin-home-link">Về trang chủ <i class="fa-solid fa-arrow-right"></i></a>
+        </header>
+
+        <div id="admin-alert" class="admin-alert d-none" role="status"></div>
+
+        <section class="admin-section" id="overview">
+            <div class="admin-section-heading">
+                <div>
+                    <h2>Tổng quan người dùng</h2>
+                    <p>Hoạt động dựa trên lần đăng nhập gần nhất; tăng trưởng so sánh hai giai đoạn 30 ngày.</p>
+                </div>
+                <button id="refresh-overview" class="admin-refresh" type="button">
+                    <i class="fa-solid fa-rotate" aria-hidden="true"></i> Tải lại
+                </button>
+            </div>
+            <div class="admin-stat-grid" aria-live="polite">
+                <article class="admin-stat-card">
+                    <span>Tổng người dùng</span>
+                    <strong id="stat-total-users">—</strong>
+                    <small>Tài khoản đã đăng ký</small>
+                </article>
+                <article class="admin-stat-card">
+                    <span>Hoạt động 30 ngày</span>
+                    <strong id="stat-active-users">—</strong>
+                    <small>Đăng nhập trong 30 ngày gần nhất</small>
+                </article>
+                <article class="admin-stat-card">
+                    <span>Người dùng mới</span>
+                    <strong id="stat-new-users">—</strong>
+                    <small id="stat-user-growth">So với 30 ngày trước: —</small>
+                </article>
+            </div>
+            <div class="admin-rank-counts" id="rank-counts" aria-label="Số người chơi theo bậc rank"></div>
+        </section>
+
+        <section class="admin-section" id="users">
+            <div class="admin-section-heading">
+                <div>
+                    <h2>Tài khoản người dùng</h2>
+                </div>
+                <button id="refresh-users" class="admin-refresh" type="button">
+                    <i class="fa-solid fa-rotate" aria-hidden="true"></i> Tải lại
+                </button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Email / tên</th>
+                            <th>Ngày tạo</th>
+                            <th>Xếp hạng</th>
+                            <th>Vai trò</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body"></tbody>
+                </table>
+            </div>
+            <div class="admin-pagination">
+                <button id="users-previous" type="button" disabled>Trang trước</button>
+                <span id="users-page-label">Trang 1</span>
+                <button id="users-next" type="button" disabled>Trang sau</button>
+            </div>
+        </section>
+
+        <section class="admin-section" id="rank-history">
+            <div class="admin-section-heading">
+                <div>
+                    <h2>Biến động xếp hạng</h2>
+                    <p>Lịch sử thay đổi rank được ghi nhận từ lúc bật tính năng này.</p>
+                </div>
+            </div>
+            <div class="admin-rank-history" id="rank-history-list" aria-live="polite">
+                <p class="admin-empty">Đang tải lịch sử xếp hạng...</p>
+            </div>
+        </section>
+
+        <section class="admin-section" id="exercises">
+            <div class="admin-section-heading">
+                <div>
+                    <h2>Bài tập huấn luyện</h2>
+                    <p>Xóa bài khỏi danh sách dùng chung hoặc link do thành viên gửi.</p>
+                </div>
+                <button id="refresh-exercises" class="admin-refresh" type="button">
+                    <i class="fa-solid fa-rotate" aria-hidden="true"></i> Tải lại
+                </button>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Tên bài tập</th>
+                            <th>Nền tảng</th>
+                            <th>Thể loại</th>
+                            <th>Người gửi</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="exercises-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+        <footer class="admin-footer"><span>KAVASK · Quản trị hệ thống</span><a href="indext.html">Trang chủ <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></footer>
+    </main>
+
+    <script src="admin-layout.js" defer></script>
+    <script type="module" src="admin.js"></script>
+    <script type="module" src="activity.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chương trình huấn luyện aim KAVASK: đánh giá, luyện tập có mục tiêu và theo dõi tiến bộ.">
+    <title>KAVASK | Huấn luyện aim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="coaching.css">
+    <link rel="stylesheet" href="cyberpunk-theme.css">
+</head>
+
+<body class="coaching-page">
+    <div class="scanlines"></div>
+
+    <nav class="navbar navbar-expand-lg coaching-nav">
+        <div class="container">
+            <a class="navbar-brand cp-brand-logo" href="indext.html">KAVASK</a>
+            <button class="navbar-toggler border-cyan" type="button" data-bs-toggle="collapse"
+                data-bs-target="#coachingNav" aria-controls="coachingNav" aria-expanded="false"
+                aria-label="Mở điều hướng">
+                <i class="fa-solid fa-bars text-cyan"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="coachingNav">
+                <div class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+                    <a class="nav-link" href="indext.html">Trang chủ</a>
+                    <a class="nav-link active" href="coaching.html" aria-current="page">Huấn luyện</a>
+                    <a class="coaching-account-link" href="auth.html" id="coaching-auth-link">Đăng nhập</a>
+                    <div class="nav-item dropdown d-none" id="account-menu">
+                        <button class="account-toggle dropdown-toggle" type="button" id="account-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="user-avatar user-avatar-small" id="nav-avatar" aria-hidden="true"></span>
+                            <span id="nav-username">Tài khoản</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end account-dropdown" aria-labelledby="account-toggle">
+                            <li><a class="dropdown-item account-menu-item" href="profile.html">
+                                <i class="fa-regular fa-user"></i><span>Hồ sơ của tôi</span>
+                            </a></li>
+                            <li class="d-none" id="admin-menu-item">
+                                <a class="dropdown-item account-menu-item" href="admin.html">
+                                    <i class="fa-solid fa-shield-halved"></i><span>Quản trị hệ thống</span>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item account-menu-item" id="nav-signout" type="button">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i><span>Đăng xuất</span>
+                            </button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="coaching-hero">
+            <div class="container">
+                <div class="coaching-hero-copy">
+                    <p class="coaching-kicker"><span></span> KAVASK PERFORMANCE LAB / 01</p>
+                    <h1>LUYỆN CÓ MỤC TIÊU.<br><span>AIM CÓ TIẾN BỘ.</span></h1>
+                    <p class="coaching-intro">
+                        Một lộ trình thực hành dành cho người chơi FPS muốn hiểu điểm mạnh, xử lý điểm yếu
+                        và biến từng buổi tập thành bước tiến có thể theo dõi.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="auth.html" class="coaching-primary-cta">BẮT ĐẦU LUYỆN TẬP <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#method" class="coaching-secondary-cta">XEM PHƯƠNG PHÁP</a>
+                    </div>
+                    <div class="coaching-focus-list">
+                        <span><i class="fa-solid fa-crosshairs"></i> Kỹ thuật</span>
+                        <span><i class="fa-solid fa-chart-simple"></i> Đo lường</span>
+                        <span><i class="fa-solid fa-arrows-rotate"></i> Lặp lại</span>
+                    </div>
+                </div>
+                <div class="coaching-hero-art" aria-hidden="true">
+                    <div class="aim-grid"></div>
+                    <div class="aim-ring aim-ring-outer"></div>
+                    <div class="aim-ring aim-ring-inner"></div>
+                    <div class="aim-crosshair"><span></span><span></span></div>
+                    <div class="aim-coordinate">KSK / 07.24</div>
+                    <div class="aim-readout"><span>FOCUS</span><strong>01</strong><i></i><i></i><i></i><i></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coaching-method section-pad" id="method">
+            <div class="container">
+                <div class="coaching-section-heading">
+                    <p class="coaching-kicker"><span></span> QUY TRÌNH HUẤN LUYỆN</p>
+                    <h2>TIẾN BỘ ĐẾN TỪ <em>PHẢN HỒI ĐÚNG.</em></h2>
+                    <p>Không phải tập nhiều hơn một cách mù quáng — hãy tập đúng kỹ năng cần cải thiện.</p>
+                </div>
+                <div class="method-track">
+                    <article class="method-step">
+                        <span class="step-index">01</span>
+                        <div class="step-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3>ĐÁNH GIÁ</h3>
+                        <p>Ghi nhận kết quả ban đầu để biết kỹ năng nào đang hỗ trợ bạn và kỹ năng nào cần ưu tiên.</p>
+                        <span class="step-tag">TÌM ĐIỂM XUẤT PHÁT</span>
+                    </article>
+                    <article class="method-step">
+                        <span class="step-index">02</span>
+                        <div class="step-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3>CHỌN TRỌNG TÂM</h3>
+                        <p>Chia mục tiêu thành bài tập ngắn, cụ thể cho tracking, clicking hoặc chuyển mục tiêu.</p>
+                        <span class="step-tag">TẬP CÓ CHỦ ĐÍCH</span>
+                    </article>
+                    <article class="method-step">
+                        <span class="step-index">03</span>
+                        <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>THEO DÕI</h3>
+                        <p>So sánh các buổi tập, nhận biết xu hướng và điều chỉnh lộ trình theo kết quả thực tế.</p>
+                        <span class="step-tag">ĐIỀU CHỈNH LIÊN TỤC</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="coaching-skills section-pad">
+            <div class="container">
+                <div class="skills-heading">
+                    <div>
+                        <p class="coaching-kicker"><span></span> CÁC NHÓM KỸ NĂNG</p>
+                        <h2>MỖI CHUYỂN ĐỘNG<br>ĐỀU CÓ LÝ DO.</h2>
+                    </div>
+                    <p>Chọn nhóm kỹ năng muốn phát triển. Bài tập cụ thể có thể thay đổi theo trình độ và mục tiêu cá nhân.</p>
+                </div>
+                <div class="skill-cards">
+                    <article class="skill-card skill-card-cyan">
+                        <span class="skill-number">A / 01</span>
+                        <i class="fa-solid fa-hand-pointer"></i>
+                        <h3>CLICKING</h3>
+                        <p>Rèn độ chính xác, nhịp bắn và khả năng kiểm soát từng lần nhấp.</p>
+                        <div class="skill-meter"><span style="width: 82%"></span></div>
+                        <span class="skill-caption">ĐỘ CHÍNH XÁC / NHỊP ĐỘ</span>
+                    </article>
+                    <article class="skill-card skill-card-pink">
+                        <span class="skill-number">A / 02</span>
+                        <i class="fa-solid fa-wave-square"></i>
+                        <h3>TRACKING</h3>
+                        <p>Giữ tâm ổn định trên mục tiêu chuyển động và làm chủ các hướng rê chuột.</p>
+                        <div class="skill-meter"><span style="width: 68%"></span></div>
+                        <span class="skill-caption">ĐỘ MƯỢT / KIỂM SOÁT</span>
+                    </article>
+                    <article class="skill-card skill-card-gold">
+                        <span class="skill-number">A / 03</span>
+                        <i class="fa-solid fa-arrows-to-circle"></i>
+                        <h3>SWITCHING</h3>
+                        <p>Chuyển mục tiêu nhanh, chọn thứ tự hợp lý và duy trì độ chuẩn xác.</p>
+                        <div class="skill-meter"><span style="width: 74%"></span></div>
+                        <span class="skill-caption">TỐC ĐỘ / ƯU TIÊN</span>
+                    </article>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="tasks.html" class="coaching-secondary-cta text-decoration-none">
+                        KHÁM PHÁ THƯ VIỆN BÀI TẬP <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="coaching-routine section-pad">
+            <div class="container routine-layout">
+                <div class="routine-copy">
+                    <p class="coaching-kicker"><span></span> THIẾT KẾ BUỔI TẬP</p>
+                    <h2>NGẮN GỌN.<br><em>ĐỀU ĐẶN.</em><br>CÓ MỤC TIÊU.</h2>
+                    <p>Giữ buổi tập vừa sức để duy trì chất lượng thao tác. Hãy nghỉ khi mất tập trung và quay lại với mục tiêu rõ ràng.</p>
+                    <a href="profile.html" class="routine-link">XEM HỒ SƠ CỦA BẠN <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="routine-board">
+                    <div class="routine-board-head"><span>SESSION BLUEPRINT</span><span>01—03</span></div>
+                    <div class="routine-row"><span class="routine-time">01</span><div><strong>Khởi động</strong><small>Làm nóng tay, giữ nhịp thoải mái</small></div><span class="routine-duration">5 PHÚT</span></div>
+                    <div class="routine-row"><span class="routine-time">02</span><div><strong>Bài tập trọng tâm</strong><small>Chọn một kỹ năng cần cải thiện</small></div><span class="routine-duration">10–15 PHÚT</span></div>
+                    <div class="routine-row"><span class="routine-time">03</span><div><strong>Ghi nhận kết quả</strong><small>Lưu điểm số và cảm nhận buổi tập</small></div><span class="routine-duration">2 PHÚT</span></div>
+                    <div class="routine-board-foot"><i class="fa-solid fa-circle-info"></i> Thời lượng gợi ý; điều chỉnh theo thể trạng và lịch tập của bạn.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coaching-final">
+            <div class="container">
+                <p class="coaching-kicker"><span></span> BƯỚC TIẾP THEO</p>
+                <h2>SẴN SÀNG VÀO <em>BUỔI TẬP ĐẦU?</em></h2>
+                <p>Tạo tài khoản KAVASK để bắt đầu hành trình theo dõi kỹ năng và tiến trình luyện aim.</p>
+                <a href="https://aimlabs.com/" class="coaching-primary-cta" target="_blank" rel="noopener noreferrer">MỞ AIMLABS <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="coaching-footer">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <a class="navbar-brand cp-brand-logo" href="indext.html">KAVASK</a>
+            <p>© 2026 KAVASK · LUYỆN TẬP CÓ MỤC TIÊU</p>
+            <a href="indext.html">Quay lại trang chủ <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="account.js"></script>
+    <script type="module" src="activity.js"></script>
+</body>
+
+</html>
