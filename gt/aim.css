@@ -1,0 +1,707 @@
+.aim-page {
+    --aim-accent: #ffd52a;
+    --aim-blue: #26a5ff;
+    --aim-line: #202b3b;
+}
+
+.aim-main {
+    padding-top: 26px;
+}
+
+.aim-header,
+.aim-range-heading,
+.aim-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.aim-header {
+    margin-bottom: 22px;
+}
+
+.aim-eyebrow {
+    margin: 0 0 7px;
+    color: var(--aim-blue);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.aim-header h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 900;
+}
+
+.aim-header h1 span {
+    color: var(--aim-accent);
+}
+
+.aim-header > div > p:last-child {
+    margin: 7px 0 0;
+    color: #a4afbf;
+    font-size: 0.88rem;
+}
+
+.aim-user-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 11px;
+    border: 1px solid rgba(38, 165, 255, 0.28);
+    border-radius: 6px;
+    color: #afc8e3;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.aim-user-label:hover {
+    border-color: var(--aim-accent);
+    color: var(--aim-accent);
+}
+
+.aim-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.aim-stats article {
+    display: flex;
+    min-height: 94px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 18px;
+    border: 1px solid var(--aim-line);
+    border-radius: 8px;
+    background: linear-gradient(130deg, rgba(38, 165, 255, 0.055), transparent 60%), #0b0e16;
+}
+
+.aim-stats article span {
+    color: #92a2b7;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.aim-stats article strong {
+    color: var(--aim-accent);
+    font-size: 1.45rem;
+    line-height: 1;
+}
+
+.aim-daily {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 16px;
+    padding: 18px 20px;
+    border: 1px solid rgba(255, 213, 42, 0.32);
+    border-radius: 8px;
+    background:
+        radial-gradient(ellipse at 90% 50%, rgba(255, 213, 42, 0.09), transparent 42%),
+        linear-gradient(120deg, rgba(38, 165, 255, 0.06), transparent 55%),
+        #0b0e16;
+}
+
+.aim-daily-copy {
+    min-width: 0;
+}
+
+.aim-daily-copy .aim-eyebrow span {
+    margin-left: 6px;
+    color: #a7b5c8;
+    letter-spacing: 0.03em;
+}
+
+.aim-daily h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.aim-daily-copy > p:not(.aim-eyebrow) {
+    margin: 5px 0;
+    color: #9eacbf;
+    font-size: 0.73rem;
+}
+
+.aim-daily-status {
+    color: #f0c943;
+    font-size: 0.67rem;
+    font-weight: 700;
+}
+
+.aim-daily-status.is-complete {
+    color: #73d99b;
+}
+
+.aim-workspace {
+    display: grid;
+    grid-template-columns: minmax(245px, 0.78fr) minmax(0, 2fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.aim-workspace.is-training-hidden {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.aim-range-section[hidden] {
+    display: none;
+}
+
+.aim-chapters,
+.aim-range-section,
+.aim-records {
+    min-width: 0;
+    border: 1px solid var(--aim-line);
+    border-radius: 8px;
+    background: #0b0e16;
+}
+
+.aim-chapters {
+    padding: 18px;
+}
+
+.aim-progress-summary {
+    margin: 6px 0 0;
+    color: #97a8be;
+    font-size: 0.7rem;
+}
+
+.aim-section-heading {
+    margin-bottom: 14px;
+}
+
+.aim-section-heading h2,
+.aim-range-heading h2 {
+    margin: 0;
+    color: #f3f3f5;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.aim-mission-list {
+    display: grid;
+    gap: 14px;
+}
+
+.aim-chapter-path {
+    position: relative;
+    display: grid;
+    gap: 8px;
+    padding: 13px;
+    border: 1px solid #1e2a39;
+    border-radius: 7px;
+    background: linear-gradient(140deg, rgba(38, 165, 255, 0.035), transparent 60%), #090c13;
+}
+
+.aim-chapter-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.aim-chapter-heading h3 {
+    margin: 0;
+    color: #e7edf5;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.aim-chapter-label {
+    margin: 0 0 3px;
+    color: var(--aim-blue);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.aim-chapter-progress {
+    color: #99a8bb;
+    font-size: 0.68rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.aim-chapter-progress-track {
+    height: 4px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #192330;
+}
+
+.aim-chapter-progress-track span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--aim-blue), var(--aim-accent));
+    transition: width 0.2s ease;
+}
+
+.aim-mission-button {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 57px;
+    padding: 9px;
+    border: 1px solid #202b3b;
+    border-radius: 6px;
+    background: #090c13;
+    color: #e5e9ef;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.16s ease, background 0.16s ease, opacity 0.16s ease;
+}
+
+.aim-mission-button:not(:disabled):hover,
+.aim-mission-button.is-selected {
+    border-color: rgba(255, 213, 42, 0.65);
+    background: rgba(255, 213, 42, 0.055);
+}
+
+.aim-mission-button.is-completed {
+    border-color: rgba(67, 194, 139, 0.25);
+}
+
+.aim-mission-button.is-locked {
+    border-color: #1b2532;
+    background: #080b11;
+    color: #748093;
+    cursor: not-allowed;
+    opacity: 0.62;
+}
+
+.aim-mission-number {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border: 1px solid #34445a;
+    border-radius: 5px;
+    color: var(--aim-blue);
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.aim-mission-copy {
+    min-width: 0;
+}
+
+.aim-mission-copy strong,
+.aim-mission-copy small {
+    display: block;
+}
+
+.aim-mission-copy strong {
+    overflow: hidden;
+    font-size: 0.76rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aim-mission-copy small {
+    margin-top: 3px;
+    color: #8997aa;
+    font-size: 0.64rem;
+}
+
+.aim-mission-best {
+    display: block;
+    margin-top: 3px;
+    color: #9aa8bb;
+    font-size: 0.58rem;
+    font-weight: 700;
+}
+
+.aim-mission-state {
+    display: grid;
+    min-width: 34px;
+    justify-items: center;
+    gap: 3px;
+    color: var(--aim-blue);
+    font-size: 0.8rem;
+}
+
+.aim-mission-state.is-completed {
+    color: #63d69a;
+}
+
+.aim-mission-button.is-locked .aim-mission-state {
+    color: #697588;
+}
+
+.aim-chapter-label {
+    margin: 15px 0 7px;
+    color: #7f90a6;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.aim-chapter-label:first-child {
+    margin-top: 0;
+}
+
+.aim-range-section {
+    overflow: hidden;
+}
+
+.aim-range-heading {
+    min-height: 88px;
+    padding: 15px 18px;
+}
+
+.aim-range-heading h2 {
+    font-size: 1rem;
+}
+
+.aim-range-heading > div > p:last-child {
+    margin: 5px 0 0;
+    color: #929eaf;
+    font-size: 0.74rem;
+}
+
+.aim-start-button {
+    display: inline-flex;
+    min-height: 39px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid var(--aim-accent);
+    border-radius: 5px;
+    background: var(--aim-accent);
+    color: #090b10;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.aim-start-button:hover:not(:disabled) {
+    background: #ffe36b;
+}
+
+.aim-start-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.aim-arena {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background: #050912;
+}
+
+.aim-arena:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+    background: #050912;
+    cursor: none;
+}
+
+.aim-arena:fullscreen #aim-canvas {
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.aim-arena:fullscreen .aim-hud {
+    top: 20px;
+    left: 50%;
+    gap: 12px;
+    transform: translateX(-50%);
+}
+
+.aim-arena:fullscreen .aim-hud span {
+    min-width: 90px;
+    padding: 9px 13px;
+    background: rgba(5, 9, 18, 0.62);
+    text-align: center;
+}
+
+.aim-arena:fullscreen .aim-hud strong {
+    font-size: 1.15rem;
+}
+
+.aim-arena:fullscreen .aim-crosshair span,
+.aim-arena:fullscreen .aim-crosshair i {
+    background: #26ffc3;
+    box-shadow: 0 0 6px rgba(38, 255, 195, 0.72);
+}
+
+.aim-arena:fullscreen .aim-overlay {
+    background: rgba(5, 9, 18, 0.78);
+}
+
+#aim-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    touch-action: none;
+}
+
+.aim-crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 22px;
+    height: 22px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.aim-crosshair span,
+.aim-crosshair i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 0 5px #000;
+    transform: translate(-50%, -50%);
+}
+
+.aim-crosshair span {
+    width: 2px;
+    height: 19px;
+}
+
+.aim-crosshair i {
+    width: 19px;
+    height: 2px;
+}
+
+.aim-hud {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    display: flex;
+    gap: 7px;
+    pointer-events: none;
+}
+
+.aim-hud span {
+    display: flex;
+    min-width: 76px;
+    flex-direction: column;
+    gap: 3px;
+    padding: 7px 9px;
+    border: 1px solid rgba(143, 166, 196, 0.18);
+    border-radius: 5px;
+    background: rgba(5, 9, 18, 0.72);
+    color: #98a9bf;
+    font-size: 0.57rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+}
+
+.aim-hud strong {
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+}
+
+.aim-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    padding: 25px;
+    background: rgba(5, 9, 18, 0.72);
+    text-align: center;
+}
+
+.aim-overlay[hidden] {
+    display: none;
+}
+
+.aim-overlay > div {
+    max-width: 390px;
+}
+
+.aim-overlay-icon {
+    display: inline-grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border: 1px solid rgba(255, 213, 42, 0.4);
+    border-radius: 50%;
+    color: var(--aim-accent);
+    font-size: 1.15rem;
+}
+
+.aim-overlay h3 {
+    margin: 13px 0 6px;
+    font-size: 1.1rem;
+}
+
+.aim-overlay p {
+    margin: 0 0 16px;
+    color: #a6b0bd;
+    font-size: 0.76rem;
+    line-height: 1.65;
+}
+
+.aim-status {
+    min-height: 35px;
+    margin: 0;
+    padding: 9px 14px;
+    color: #9aa8bb;
+    font-size: 0.7rem;
+}
+
+.aim-status.is-error {
+    color: #ff7e88;
+}
+
+.aim-records {
+    margin-top: 16px;
+    padding: 18px;
+}
+
+.aim-records .aim-section-heading {
+    margin-bottom: 12px;
+}
+
+.aim-records .aim-section-heading > span {
+    color: #8797aa;
+    font-size: 0.68rem;
+}
+
+.aim-record-table-wrap {
+    overflow-x: auto;
+}
+
+.aim-record-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 0.72rem;
+}
+
+.aim-record-table th,
+.aim-record-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #1a2534;
+    text-align: left;
+}
+
+.aim-record-table th {
+    color: #8ea0b7;
+    font-size: 0.63rem;
+    font-weight: 700;
+}
+
+.aim-record-table td {
+    color: #d3dae4;
+}
+
+.aim-record-table tr:last-child td {
+    border-bottom: 0;
+}
+
+@media (max-width: 980px) {
+    .aim-workspace {
+        grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.5fr);
+    }
+
+    .aim-main {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    .aim-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .aim-chapters {
+        padding: 14px;
+    }
+
+    .aim-chapter-path {
+        padding: 10px;
+    }
+
+    .aim-arena,
+    #aim-canvas {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 520px) {
+    .aim-header,
+    .aim-daily,
+    .aim-range-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .aim-header {
+        gap: 12px;
+    }
+
+    .aim-range-heading {
+        align-items: stretch;
+    }
+
+    .aim-daily {
+        padding: 14px;
+    }
+
+    .aim-daily > .aim-start-button {
+        width: 100%;
+    }
+
+    .aim-stats {
+        gap: 8px;
+    }
+
+    .aim-stats article {
+        min-height: 80px;
+        padding: 11px;
+    }
+
+    .aim-stats article span {
+        font-size: 0.55rem;
+    }
+
+    .aim-stats article strong {
+        font-size: 1.2rem;
+    }
+
+    .aim-mission-list {
+        grid-template-columns: 1fr;
+    }
+
+    .aim-main {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .aim-records {
+        padding: 13px;
+    }
+}

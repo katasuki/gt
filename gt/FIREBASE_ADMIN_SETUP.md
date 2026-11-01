@@ -59,6 +59,19 @@ last sign-in was within the previous 30 days. User growth compares accounts
 created in the latest 30-day period with the preceding 30-day period; it is
 based on account creation dates, not a recorded in-app activity event.
 
+The standalone browser-based 3D aim trainer is available at `aim.html` for
+signed-in players. It provides 15 exercises across four chapters and one
+deterministic daily challenge shared by all players for each UTC calendar date.
+Chapter exercises unlock in sequence after the previous exercise's full timer
+is completed; the 3D range appears only after selecting an unlocked exercise or
+starting the daily challenge. It stores each run under
+`aimProgress/{uid}/runs/{runId}`; deploy the Firestore rules above before using
+the trainer so players can only read and create their own results. A daily
+challenge is marked complete only after its full timer runs out.
+Game-specific mouse sensitivity settings have their own page at
+`aim-settings.html` and are stored under `aimProgress/{uid}/settings/{gameId}`,
+protected by the same user-scoped Firestore rules.
+
 Player ranks are assigned by admins from the user list using the four tiers
 shown on the home page. Current assignments are stored in `userRanks/{uid}`;
 each change is appended to `rankHistory`. The history starts when this feature

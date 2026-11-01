@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luyện aim 3D với chapter, thử thách daily và bảng thành tích KAVASK.">
+    <title>KAVASK | Aim Training</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="cyberpunk-theme.css">
+    <link rel="stylesheet" href="aim.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+
+<body class="player-profile-page aim-page">
+    <aside class="profile-sidebar">
+        <a href="indext.html" class="profile-sidebar-brand">KAVASK</a>
+        <nav class="sidebar-sections" aria-label="Điều hướng aim training">
+            <section class="sidebar-group">
+                <h2>Trang chủ</h2>
+                <a href="indext.html">Trang chủ KAVASK</a>
+                <a href="coaching.html">Huấn luyện</a>
+            </section>
+            <section class="sidebar-group">
+                <h2>Luyện tập</h2>
+                <a href="#chapters" aria-current="page">Lộ trình chapter</a>
+                <a href="#training-range">Bài đang chọn</a>
+                <a href="#aim-records">Thành tích</a>
+                <a href="aim-settings.html">Sensitivity theo game</a>
+                <a href="tasks.html">Thư viện bài tập</a>
+            </section>
+        </nav>
+        <div class="sidebar-account">
+            <a href="admin.html" id="admin-dashboard-link" class="sidebar-account-link d-none">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>Quản trị hệ thống</span>
+            </a>
+            <a href="profile.html" class="sidebar-account-link">
+                <span id="sidebar-avatar" class="user-avatar user-avatar-small" aria-hidden="true"></span>
+                <span id="sidebar-username">Tài khoản</span>
+            </a>
+            <button id="aim-logout" class="sidebar-account-link" type="button">
+                <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                <span>Đăng xuất</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="profile-main aim-main">
+        <header class="aim-header">
+            <div>
+                <p class="aim-eyebrow">KAVASK / TRAINING GROUNDS</p>
+                <h1>PHÒNG <span>LUYỆN AIM</span></h1>
+                <p>Luyện phản xạ trong không gian 3D, chọn bài theo kỹ năng hoặc thử thách daily.</p>
+            </div>
+            <a class="aim-user-label" href="aim-settings.html">
+                <i class="fa-solid fa-sliders" aria-hidden="true"></i> CÀI ĐẶT SENSITIVITY
+            </a>
+        </header>
+
+        <section class="aim-stats" aria-label="Tổng quan thành tích">
+            <article><span>LƯỢT ĐÃ LƯU</span><strong id="aim-session-count">—</strong></article>
+            <article><span>ĐIỂM CAO NHẤT</span><strong id="aim-best-score">—</strong></article>
+            <article><span>TỔNG MỤC TIÊU TRÚNG</span><strong id="aim-total-hits">—</strong></article>
+        </section>
+
+        <section class="aim-daily" aria-labelledby="aim-daily-title">
+            <div class="aim-daily-copy">
+                <p class="aim-eyebrow">THỬ THÁCH HÔM NAY <span id="aim-daily-date"></span></p>
+                <h2 id="aim-daily-title">Đang chọn bài thử thách...</h2>
+                <p id="aim-daily-description">Mỗi ngày một bài tập chung cho tất cả người chơi.</p>
+                <span id="aim-daily-status" class="aim-daily-status">Chưa hoàn thành hôm nay</span>
+            </div>
+            <button id="aim-daily-start" class="aim-start-button" type="button" disabled>
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i> CHƠI DAILY
+            </button>
+        </section>
+
+        <section class="aim-workspace is-training-hidden" id="aim-workspace">
+            <aside class="aim-chapters" id="chapters">
+                <div class="aim-section-heading">
+                    <div>
+                        <p class="aim-eyebrow">LỘ TRÌNH MỞ KHÓA</p>
+                        <h2>Chọn bài tiếp theo</h2>
+                        <p class="aim-progress-summary" id="aim-progress-summary">Đang tải tiến độ...</p>
+                    </div>
+                </div>
+                <div id="aim-mission-list" class="aim-mission-list"></div>
+            </aside>
+
+            <section class="aim-range-section" id="training-range" aria-label="Phòng tập aim 3D" hidden>
+                <div class="aim-range-heading">
+                    <div>
+                        <p class="aim-eyebrow" id="aim-current-chapter">CHAPTER 01</p>
+                        <h2 id="aim-current-title">Đang tải bài tập...</h2>
+                        <p id="aim-current-description"></p>
+                    </div>
+                    <button id="aim-start" class="aim-start-button" type="button" disabled>
+                        <i class="fa-solid fa-play" aria-hidden="true"></i> BẮT ĐẦU
+                    </button>
+                </div>
+
+                <div class="aim-arena" id="aim-arena">
+                    <canvas id="aim-canvas" aria-label="Không gian luyện aim 3D"></canvas>
+                    <div class="aim-crosshair" aria-hidden="true"><span></span><i></i></div>
+                    <div class="aim-hud" aria-live="polite">
+                        <span>THỜI GIAN <strong id="aim-timer">30</strong></span>
+                        <span>TRÚNG <strong id="aim-hits">0</strong></span>
+                        <span>ĐIỂM <strong id="aim-score">0</strong></span>
+                    </div>
+                    <div class="aim-overlay" id="aim-overlay">
+                        <div>
+                            <span class="aim-overlay-icon"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i></span>
+                            <h3 id="aim-overlay-title">Sẵn sàng luyện tập?</h3>
+                            <p id="aim-overlay-copy">Chọn bài tập rồi bắt đầu. Nhấn chuột trái để bắn mục tiêu; nhấn Esc để kết thúc.</p>
+                            <button id="aim-overlay-start" class="aim-start-button" type="button" disabled>
+                                VÀO PHÒNG TẬP
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p id="aim-status" class="aim-status" role="status" aria-live="polite">
+                    Đang khởi tạo phòng tập 3D...
+                </p>
+            </section>
+        </section>
+
+        <section class="aim-records" id="aim-records">
+            <div class="aim-section-heading">
+                <div>
+                    <p class="aim-eyebrow">PLAYER RECORDS</p>
+                    <h2>Thành tích gần đây</h2>
+                </div>
+                <span id="aim-record-note">Đang tải dữ liệu...</span>
+            </div>
+            <div class="aim-record-table-wrap">
+                <table class="aim-record-table">
+                    <thead>
+                        <tr><th>Bài tập</th><th>Ngày chơi</th><th>Trúng / Bắn</th><th>Độ chính xác</th><th>Điểm</th></tr>
+                    </thead>
+                    <tbody id="aim-record-body">
+                        <tr><td colspan="5">Đang tải thành tích...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="aim.js"></script>
+</body>
+
+</html>
